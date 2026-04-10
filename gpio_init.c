@@ -17,3 +17,7 @@ void gpio_set_led(int on) {
         GPIO_ODR &= ~(1 << 5);
     }
 }
+
+void gpio_toggle_led(void) {
+    GPIO_ODR ^= (1 << 5);
+}
