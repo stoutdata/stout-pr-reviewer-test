@@ -33,3 +33,11 @@ char uart_receive_char(void) {
     while (!(USART_SR & USART_SR_RXNE));
     return (char)(USART_DR & 0xFF);
 }
+
+void uart_send_hex(uint32_t value) {
+    const char hex[] = "0123456789ABCDEF";
+    uart_send_string("0x");
+    for (int i = 28; i >= 0; i -= 4) {
+        uart_send_char(hex[(value >> i) & 0xF]);
+    }
+}
