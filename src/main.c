@@ -1,7 +1,7 @@
 #include <zephyr/kernel.h>
 #include <zephyr/sys/printk.h>
 
-#define BLINK_PERIOD_MS 1000
+#define BLINK_PERIOD_MS 500
 #define MESSAGE         "blink"
 
 int main(void)
